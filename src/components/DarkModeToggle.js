@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/theme";
 
-function DarkModeToggle({ theme, setTheme }) {
+function DarkModeToggle() {
+  const { theme, setTheme } = useContext(ThemeContext);
   function handleToggleTheme(e) {
     setTheme(e.target.checked ? "dark" : "light");
   }
@@ -17,3 +19,4 @@ function DarkModeToggle({ theme, setTheme }) {
 }
 
 export default DarkModeToggle;
+
